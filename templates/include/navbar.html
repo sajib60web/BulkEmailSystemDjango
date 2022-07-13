@@ -10,6 +10,10 @@
                     <a class="nav-link {% if request.path == url %}active{% endif %}" href="{{ url }}">Home</a>
                 </li>
                 <li class="nav-item">
+                    {% url 'member_email_send' as url %}
+                    <a class="nav-link {% if request.path == url %}active{% endif %}" href="{{ url }}">Member Email Send</a>
+                </li>
+                <li class="nav-item">
                     {% url 'member_list' as url %}
                     <a class="nav-link {% if request.path == url %}active{% endif %}" href="{{ url }}">Member List</a>
                 </li>

@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block title %}{{ title }}{% endblock %} {% block content %} {% load static %}
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-header">
+            <h5 class="card-title text-center">{{ title }}</h5>
+        </div>
+        <div class="card-body">
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col col-sm-6">
+                        {% if messages %} {% for message in messages %}
+                        <p id="errorMsg">{{ message }}</p>
+                        {% endfor %} {% endif %}
+                        <form class="mb-0" action="" method="post">
+                            {% csrf_token %}
+                            <div class="form-group mb-3">
+                                <label for="subject">Subject</label>
+                                <input type="text" name="subject" id="subject" class="form-control" rows="3" placeholder="Enter Subject" required="" />
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="note">Note</label>
+                                <textarea name="note" id="note" class="form-control" rows="3" placeholder="Enter Note"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary float-end">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
